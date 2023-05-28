@@ -1,0 +1,75 @@
+# Maintainer: Barnabé di Kartola <barnabedikartola@gmail.com>
+
+pkgname=uaiso-desktop-opcional
+pkgver=$(date +%y.%m.%d)
+pkgrel=$(date +%H%M)
+pkgdesc="Meta pacote base para desktop"
+arch=('any')
+url="https://github.com/UaiSO21/$pkgname"
+license=('GPL3')
+depends=(
+    'acpi'
+    'alsa-firmware'
+    'appimagelauncher'
+    'aspell-pt'
+    'bauh'
+    'bigbashview'
+    'big-mount-git'
+    'biglinux-noise-reduction-pipewire'
+    'bluedevil'
+    'breeze-gtk'
+    'breeze-icons'
+    'ffmpeg'
+    'ffmpegthumbnailer'
+    'ffmpegthumbs'
+    'freerdp'
+    'gtk-engine-murrine'
+    'gtk-update-icon-cache'
+    'hicolor-icon-theme'
+    'i8kutils'
+    'jre'
+    'kvantum'
+    'libunity'
+    'mystiq'
+    'network-manager-applet'
+    'networkmanager'
+    'networkmanager-l2tp'
+    'networkmanager-openconnect'
+    'networkmanager-openvpn'
+    'networkmanager-pptp'
+    'networkmanager-qt'
+    'networkmanager-vpnc'
+    'nodejs-nativefier'
+    'numlockx'
+    'pavucontrol'
+    'pyside2'
+    'samba'
+    'xdg-user-dirs'
+    )
+
+provides=("$pkgname")
+# conflicts=('')
+source=("git+${url}.git")
+md5sums=('SKIP')
+if [ -e "${pkgname}.install" ];then
+    install=${pkgname}.install
+fi
+
+
+package() {
+
+    InternalDir="${srcdir}/${pkgname}"
+
+    # Copy files
+    if [ -d "${InternalDir}/usr" ]; then
+        cp -r "${InternalDir}/usr" "${pkgdir}/"
+    fi
+
+    if [ -d "${InternalDir}/etc" ]; then
+        cp -r "${InternalDir}/etc" "${pkgdir}/"
+    fi
+
+    if [ -d "${InternalDir}/opt" ]; then
+        cp -r "${InternalDir}/opt" "${pkgdir}/"
+    fi
+}
