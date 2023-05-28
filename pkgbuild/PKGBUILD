@@ -41,7 +41,7 @@ depends=(
     'networkmanager-vpnc'
     'nodejs-nativefier'
     'numlockx'
-    'pavucontrol'
+    'pavucontrol-qt'
     'pyside2'
     'samba'
     'xdg-user-dirs'
