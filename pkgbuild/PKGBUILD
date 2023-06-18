@@ -30,6 +30,7 @@ depends=(
     'jre'
     'kvantum'
     'libunity'
+    'mbedtls2'
     'mystiq'
     'network-manager-applet'
     'networkmanager'
@@ -45,6 +46,14 @@ depends=(
     'pyside2'
     'samba'
     'xdg-user-dirs'
+    'qt5-svg'
+    'qt5-x11extras'
+    'mbedtls'
+    'pipewire'
+    'libfdk-aac'
+    'swig'
+    'qt5-wayland'
+    'sndio'
     )
 
 provides=("$pkgname")
