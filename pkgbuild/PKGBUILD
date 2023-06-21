@@ -54,6 +54,7 @@ depends=(
     'swig'
     'qt5-wayland'
     'sndio'
+    'cpu-x'
     )
 
 provides=("$pkgname")
